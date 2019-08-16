@@ -1,0 +1,25 @@
+header{
+    font-size: 2em;
+    margin: 50px;
+}
+
+header div{
+    margin-top: 25px;
+}
+
+main form ul>li{
+    list-style: none;
+    color: rgb(82, 149, 175);
+    /* text-align: initial; */
+}
+
+form ul li>label{
+    text-align: right;
+    width: 100px;
+    font-weight: bold;
+}
+
+.hide {
+    display:none;
+}
+

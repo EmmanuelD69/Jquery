@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carnet d'adresses en Jquery</title>
+    <script src="https://kit.fontawesome.com/fc338e43d0.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="container">
+        <h1><i class="fas fa-book"></i> Carnet d'Adresses</h1>
+        <section id="contactList"></section>
+        <div>
+            <button id="plus"><i class="fas fa-plus"></i></button>
+            <button id="effacer"><i class="far fa-trash-alt"></i></button>
+        </div>
+        <hr>
+    </header>
+    <main class="container">
+        <form id="formulaire" class="hide" action="">
+            <ul>
+                <li>
+                    <label for="civilite">Civilité :</label>
+                    <select id="civilite">
+                        <option value="1">Madame</option>
+                        <option value="2">Mademoiselle</option>
+                        <option value="3">Monsieur</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" placeholder="nom">
+                </li>
+                <li>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" placeholder="prénom">
+                </li>
+                <li>
+                    <label for="prenom">Téléphone :</label>
+                    <input type="text" id="telephone" placeholder="téléphone">
+                </li>
+                <li>
+                    <input type="submit" id="btn" value="Enregistrer">
+                </li>
+            </ul>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>    
+    <script src="js/main.js"></script>
+</body>
+</html>
