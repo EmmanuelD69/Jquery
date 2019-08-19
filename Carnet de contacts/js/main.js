@@ -39,6 +39,7 @@ function onClickSaveContact(event){
 /* Cette fonction sert à effacer complètement la liste de contact, y compris dans le cache local */
 function onClickClearAddressBook(){
     $("#contactList").empty() /* Effacement de l'ancienne liste de contacts affichée sur la page web */
+    $("#infosContact h3").empty() /* Effacement des infos sur le contact affichée sur la page web */
     localStorage.clear() /* Effacement de l'ensemble des données contenues dans le cache local du navigateur */
 }
 
@@ -53,10 +54,28 @@ function listCarnetContact(){
 
 function displayContact(){
     //récupérer le data-index
+    let civilite
     var index = $(this).attr('data-index') /* Récupère l'index du contact sur lequel on a clic */
     console.log(index)
-    //récupère les infos du contact
+    //récupère les infos du contact    
+    switch (index) {
+        case "0":
+            civilite = "Madame" 
+            $("#infosContact h3").text(civilite + " " + liste[index].prenom + " " + liste[index].nom)
+            break;
+        case "1":
+            civilite = "Mademoiselle" 
+            $("#infosContact h3").text(civilite + " " + liste[index].prenom + " " + liste[index].nom)
+            break;
+        case "2":
+            civilite = "Monsieur" 
+            $("#infosContact h3").text(civilite + " " + liste[index].prenom + " " + liste[index].nom)
+            break;
+    }
+    $("#infosContact p").text(liste[index].telephone)
 }
+
+
 
 /* code qui ne s'éxécute qu'une fois que la page HTML est bien chargée */
 $(document).ready(function(){
