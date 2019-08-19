@@ -47,7 +47,7 @@ function listCarnetContact(){
     checkLocalStorage() /* appel à la fonction "checkLocalStorage" */
     $('#contactList').html('<ul>')
     for(i=0; i < liste.length; i++){ /* pour chaque objets contenus dans le tableau "liste" */
-        $("#contactList ul").append("<li>" + '<a data-index="${i}">' + liste[i].prenom + " " + liste[i].nom + "</a>" + "</li>") /* Affiche le prénom suivi du nom dans une li */
+        $("#contactList ul").append("<li>" + '<a href="#" data-index="${i}">' + liste[i].prenom + " " + liste[i].nom + "</a>" + "</li>") /* Affiche le prénom suivi du nom dans une li */
     }
 }
 
