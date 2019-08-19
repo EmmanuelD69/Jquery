@@ -45,10 +45,17 @@ function onClickClearAddressBook(){
 /* Cette fonction affiche la liste de contact sur la page web */
 function listCarnetContact(){    
     checkLocalStorage() /* appel à la fonction "checkLocalStorage" */
-    $('#contactList').html('<ul>')
+    $('#contactList').html('<ul>') /* Création d'une ul pour y insérer les li correspondant à nos contacts enregistrés */
     for(i=0; i < liste.length; i++){ /* pour chaque objets contenus dans le tableau "liste" */
-        $("#contactList ul").append("<li>" + '<a href="#" data-index="${i}">' + liste[i].prenom + " " + liste[i].nom + "</a>" + "</li>") /* Affiche le prénom suivi du nom dans une li */
+        $("#contactList ul").append("<li>" + '<a href="#" data-index="' +i+ '">' + liste[i].prenom + " " + liste[i].nom + "</a>" + "</li>") /* Affiche le prénom suivi du nom dans une li et attribut à chaque li un index qui sera utilisé pour afficher le détail du contact lorsqu'on clic sur son nom.*/
     }
+}
+
+function displayContact(){
+    //récupérer le data-index
+    var index = $(this).attr('data-index') /* Récupère l'index du contact sur lequel on a clic */
+    console.log(index)
+    //récupère les infos du contact
 }
 
 /* code qui ne s'éxécute qu'une fois que la page HTML est bien chargée */
@@ -57,6 +64,7 @@ $(document).ready(function(){
     $("#btn").on('click', onClickSaveContact) /* mise en place d'un écouteur d'évènement */
     $("#effacer").on('click', onClickClearAddressBook) /* mise en place d'un écouteur d'évènement */
     $("form").toggle() /* On cache le formulaire */
+    $("#contactList").on('click', 'ul li a', displayContact) /* mise en place d'un écouter d'évènement qui se déclenchera lorsqu'on va clic sur le nom d'un contact */
     checkLocalStorage() /* appel à la fonction "checkLocalStorage" afin de verifier s'il exite des données dans le cache local au moment du chargement de la page */
     listCarnetContact() /* appel à la fonction "listCarnetContact" afin d'afficher la liste de contact au moment du chargement de la page */
     })
