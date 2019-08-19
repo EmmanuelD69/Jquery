@@ -1,16 +1,10 @@
-header{
-    font-size: 2em;
-    margin: 50px;
-}
-
-header div{
-    margin-top: 25px;
+main, header{
+    background-color: rgb(255, 245, 198);
 }
 
 main form ul>li{
     list-style: none;
     color: rgb(82, 149, 175);
-    /* text-align: initial; */
 }
 
 form ul li>label{
@@ -19,7 +13,10 @@ form ul li>label{
     font-weight: bold;
 }
 
-.hide {
-    display:none;
+header{
+    margin-bottom: -8px;
 }
 
+main{
+    height: 80vh;
+}
